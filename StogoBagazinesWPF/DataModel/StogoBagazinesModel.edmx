@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl" Namespace="StogoBagazinesModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2005">
+        <EntityContainer Name="StogoBagazinesModelTargetContainer" >
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="StogoBagazinesModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+        <EntityContainer Name="StogoBagazinesModelContainer" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="DvLaikiklis" EntityType="StogoBagazinesModel.DvLaikiklis" />
+        </EntityContainer>
+        <EntityType Name="DvLaikiklis">
+          <Key>
+            <PropertyRef Name="DvLaikiklisID" />
+          </Key>
+          <Property Name="DvLaikiklisID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Pavadinimas" Type="String" Nullable="false" />
+          <Property Name="DviraciuKiekis" Type="Int16" Nullable="false" />
+          <Property Name="KelGalia" Type="Double" Nullable="false" />
+          <Property Name="Tvirtinimas" Type="StogoBagazinesModel.DvTvirtinimas" Nullable="false" />
+          <Property Name="Kiekis" Type="Int32" Nullable="false" />
+          <Property Name="NuomosKaina" Type="Double" Nullable="false" />
+          <Property Name="Uzdirbo" Type="Double" Nullable="false" />
+          <Property Name="Nuomota" Type="Int32" Nullable="false" />
+          <Property Name="Verte" Type="Double" Nullable="false" />
+        </EntityType>
+        <EnumType Name="DvTvirtinimas">
+          <Member Name="Stogo" Value="1" />
+          <Member Name="Kablio" Value="2" />
+          <Member Name="Kitoks" Value="3" />
+        </EnumType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs" Space="C-S">
+        <Alias Key="Model" Value="StogoBagazinesModel" />
+        <Alias Key="Target" Value="StogoBagazinesModel.Store" />
+        <EntityContainerMapping CdmEntityContainer="StogoBagazinesModelContainer" StorageEntityContainer="StogoBagazinesModelTargetContainer">
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+        <DesignerProperty Name="DDLGenerationTemplate" Value="$(VSEFTools)\DBGen\SSDLToMySQL.tt" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
