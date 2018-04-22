@@ -13,28 +13,108 @@
     <edmx:ConceptualModels>
       <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="StogoBagazinesModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
         <EntityContainer Name="StogoBagazinesModelContainer" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="DvLaikiklis" EntityType="StogoBagazinesModel.DvLaikiklis" />
+          <EntitySet Name="DvLaikikliai" EntityType="StogoBagazinesModel.DvLaikikliai" />
+          <EntitySet Name="Bagazines" EntityType="StogoBagazinesModel.Bagazines" />
+          <EntitySet Name="Grandines" EntityType="StogoBagazinesModel.Grandines" />
+          <EntitySet Name="Skersiniai" EntityType="StogoBagazinesModel.Skersiniai" />
+          <EntitySet Name="Kiti" EntityType="StogoBagazinesModel.Kiti" />
+          <EntitySet Name="Klientai" EntityType="StogoBagazinesModel.Klientai" />
         </EntityContainer>
-        <EntityType Name="DvLaikiklis">
+        <EntityType Name="DvLaikikliai">
           <Key>
             <PropertyRef Name="DvLaikiklisID" />
           </Key>
           <Property Name="DvLaikiklisID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Pavadinimas" Type="String" Nullable="false" />
           <Property Name="DviraciuKiekis" Type="Int16" Nullable="false" />
-          <Property Name="KelGalia" Type="Double" Nullable="false" />
+          <Property Name="KelGalia" Type="Double" Nullable="true" />
           <Property Name="Tvirtinimas" Type="StogoBagazinesModel.DvTvirtinimas" Nullable="false" />
-          <Property Name="Kiekis" Type="Int32" Nullable="false" />
-          <Property Name="NuomosKaina" Type="Double" Nullable="false" />
-          <Property Name="Uzdirbo" Type="Double" Nullable="false" />
-          <Property Name="Nuomota" Type="Int32" Nullable="false" />
-          <Property Name="Verte" Type="Double" Nullable="false" />
+          <Property Name="Kiekis" Type="Int32" Nullable="true" />
+          <Property Name="NuomosKaina" Type="Double" Nullable="true" />
+          <Property Name="Uzdirbo" Type="Double" Nullable="true" />
+          <Property Name="Nuomota" Type="Int32" Nullable="true" />
+          <Property Name="Verte" Type="Double" Nullable="true" />
         </EntityType>
         <EnumType Name="DvTvirtinimas">
           <Member Name="Stogo" Value="1" />
           <Member Name="Kablio" Value="2" />
           <Member Name="Kitoks" Value="3" />
         </EnumType>
+        <EntityType Name="Bagazines">
+          <Key>
+            <PropertyRef Name="BagazineID" />
+          </Key>
+          <Property Name="BagazineID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Pavadinimas" Type="String" Nullable="false" />
+          <Property Name="Dydis" Type="String" Nullable="true" />
+          <Property Name="AtidarymoTipas" Type="StogoBagazinesModel.BagAtidarymas" Nullable="false" />
+          <Property Name="KeliamojiGalia" Type="Double" Nullable="true" />
+          <Property Name="Uzraktas" Type="Boolean" Nullable="false" />
+          <Property Name="Svoris" Type="Double" Nullable="true" />
+          <Property Name="Medziaga" Type="String" Nullable="true" />
+          <Property Name="Kiekis" Type="Int32" Nullable="true" />
+          <Property Name="NuomosKaina" Type="Double" Nullable="true" />
+          <Property Name="Uzdirbo" Type="Double" Nullable="true" />
+          <Property Name="Nuomota" Type="Int32" Nullable="false" />
+          <Property Name="Verte" Type="Double" Nullable="true" />
+        </EntityType>
+        <EnumType Name="BagAtidarymas">
+          <Member Name="dvipusis" Value="1" />
+          <Member Name="vienpusis" Value="2" />
+        </EnumType>
+        <EntityType Name="Grandines">
+          <Key>
+            <PropertyRef Name="GrandineID" />
+          </Key>
+          <Property Name="GrandineID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Pavadinimas" Type="String" Nullable="false" />
+          <Property Name="Tipas" Type="StogoBagazinesModel.GrandTipas" Nullable="true" />
+          <Property Name="Matmenys" Type="String" Nullable="true" />
+          <Property Name="GrandStoris" Type="String" Nullable="true" />
+          <Property Name="Kiekis" Type="Int32" Nullable="true" />
+          <Property Name="NuomosKaina" Type="Double" Nullable="true" />
+          <Property Name="Uzdirbo" Type="Double" Nullable="true" />
+          <Property Name="Nuomota" Type="Int32" Nullable="true" />
+          <Property Name="Verte" Type="Double" Nullable="true" />
+        </EntityType>
+        <EnumType Name="GrandTipas">
+          <Member Name="lengvajam" Value="1" />
+          <Member Name="visureigiui" Value="2" />
+          <Member Name="mikroautobusui" Value="3" />
+        </EnumType>
+        <EntityType Name="Skersiniai">
+          <Key>
+            <PropertyRef Name="SkersinisID" />
+          </Key>
+          <Property Name="SkersinisID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Pavadinimas" Type="String" Nullable="false" />
+          <Property Name="Kiekis" Type="Int32" Nullable="true" />
+          <Property Name="NuomosKaina" Type="Double" Nullable="true" />
+          <Property Name="Uzdirbo" Type="Double" Nullable="true" />
+          <Property Name="Nuomota" Type="Int32" Nullable="true" />
+          <Property Name="Verte" Type="Double" Nullable="true" />
+        </EntityType>
+        <EntityType Name="Kiti">
+          <Key>
+            <PropertyRef Name="KitasID" />
+          </Key>
+          <Property Name="KitasID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Pavadinimas" Type="String" Nullable="false" />
+          <Property Name="Pastabos" Type="String" Nullable="true" />
+          <Property Name="Kiekis" Type="Int32" Nullable="true" />
+          <Property Name="NuomosKaina" Type="Double" Nullable="true" />
+          <Property Name="Uzdirbo" Type="Double" Nullable="true" />
+          <Property Name="Nuomota" Type="Int32" Nullable="false" />
+          <Property Name="Verte" Type="Double" Nullable="true" />
+        </EntityType>
+        <EntityType Name="Klientai">
+          <Key>
+            <PropertyRef Name="KlientasID" />
+          </Key>
+          <Property Name="KlientasID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="None" />
+          <Property Name="Vardas" Type="String" Nullable="false" />
+          <Property Name="Pavarde" Type="String" Nullable="true" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->

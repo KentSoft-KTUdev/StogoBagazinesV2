@@ -4,8 +4,13 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="2516570bbef4492ba27e59c6141c4bba" Name="Diagram1" >
-        <EntityTypeShape EntityType="StogoBagazinesModel.DvLaikiklis" Width="1.5" PointX="0.5" PointY="0.625" />
+      <Diagram DiagramId="2516570bbef4492ba27e59c6141c4bba" Name="Diagram1" ShowGrid="true" >
+        <EntityTypeShape EntityType="StogoBagazinesModel.DvLaikikliai" Width="1.5" PointX="0.5" PointY="0.5" FillColor="Green" />
+        <EntityTypeShape EntityType="StogoBagazinesModel.Bagazines" Width="1.5" PointX="2.25" PointY="0.5" FillColor="Green" />
+        <EntityTypeShape EntityType="StogoBagazinesModel.Grandines" Width="1.5" PointX="4" PointY="0.5" FillColor="Green" />
+        <EntityTypeShape EntityType="StogoBagazinesModel.Skersiniai" Width="1.5" PointX="7.25" PointY="0.5" FillColor="Green" />
+        <EntityTypeShape EntityType="StogoBagazinesModel.Kiti" Width="1.5" PointX="5.625" PointY="0.5" FillColor="Green" />
+        <EntityTypeShape EntityType="StogoBagazinesModel.Klientai" Width="1.5" PointX="0.5" PointY="4.125" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
